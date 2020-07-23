@@ -2,16 +2,48 @@ import React from "react";
 import ReactDOM from "react-dom";
 import faker from 'faker'
 
-import { CommentDetail } from './components/CommentDetail'
+import { CommentDetail } from "./components/CommentDetail";
+import { ApprovalCard } from './components/ApprovalCard'
 
 const App = () => {
   return (
     <div className="ui container comments">
-      <CommentDetail author="Sam"/>
-      <CommentDetail author="Kit"/>
-      <CommentDetail author="Jane"/>
+      <ApprovalCard />
+
+      <CommentDetail
+        author={faker.internet.userName()}
+        timeAgo="Today at 5:45PM"
+        textField="Nice blog post!"
+        srcImage={faker.image.avatar()}
+      />
+      <CommentDetail
+        author={faker.internet.userName()}
+        timeAgo="Today at 2:45AM"
+        textField="Super!"
+        srcImage={faker.image.avatar()}
+      />
+      <CommentDetail
+        author={faker.internet.userName()}
+        timeAgo="Yesterday at 8:00PM"
+        textField="No way?!"
+        srcImage={faker.image.avatar()}
+      />
     </div>
   );
 };
 
 ReactDOM.render(<App />, document.querySelector("#root"));
+
+
+
+
+/*
+      <CommentDetail
+        author="Michel"
+        timeAgo="Yesterday at 8:00PM"
+        textField="No way?!"
+        srcImage={faker.image.avatar()}
+      />
+
+
+*/
